@@ -4,6 +4,7 @@ import { EmagAdapter } from "./adapters/emag/adapter"
 import { GplayAdapter } from "./adapters/gplay/adapter"
 import { JarAdapter } from "./adapters/jar/jarAdapter"
 import { JmtAdapter } from "./adapters/jmt/adapter"
+import { PlasicoAdapter } from "./adapters/plasico/adapter"
 import { AppModule } from "./app.module"
 import { Crawler } from "./crawler/crawler"
 
@@ -13,7 +14,8 @@ const crawler = new Crawler(
     new JarAdapter(),
     new GplayAdapter(),
     new DesktopBgAdapter(),
-    new JmtAdapter()
+    new JmtAdapter(),
+    new PlasicoAdapter()
   ],
   ["2060", "2070", "2080", "3060", "3070", "3080", "3090", "6800", "6900"],
 )

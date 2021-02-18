@@ -23,11 +23,13 @@ export class Crawler {
       console.info(`${endDate.toTimeString()} Completed ${adapter.getName()} for ${ durationInSec.toFixed(2) } seconds`)
     }
 
-    //filter
-    return result.filter( i => {
+    const filtered = result.filter( i => {
       return this.searchTerms
         .some(searchTerm => i.name.includes(searchTerm));
     })
+    
+    filtered.sort((a,b) => (a.price > b.price ? 1: -1))
+    return filtered
   }
 }
 
