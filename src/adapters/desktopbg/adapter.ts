@@ -24,7 +24,7 @@ export class DesktopBgAdapter implements IShopAdapter {
       hasNextPage = pageRes.hasNextPage
 
       result.push(...pageRes.items)
-    } while (hasNextPage || page <= 10)
+    } while (hasNextPage && page <= 10)
 
     return result
   }
@@ -65,7 +65,7 @@ export class DesktopBgAdapter implements IShopAdapter {
           isInStock: true,
           shop: this.getName(),
           itemUrl,
-          pictures: [imageUrl],
+          imageUrl,
           price
         })
       })

@@ -43,7 +43,7 @@ export class JarAdapter implements IShopAdapter {
         price,
         shop:"JarComputers",
         itemUrl,
-        pictures: [imageUrl]
+        imageUrl
       }))    
     })
 

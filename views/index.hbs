@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>App</title>
+    <style>
+
+      table {
+        border-spacing: 0px;
+      }
+
+      table thead tr {
+        border-bottom: black 1px;
+      }
+      table thead td {
+        font-weight: bold;
+      }
+
+      table tbody td {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      {{!-- table tbody tr:nth-child(odd) {
+        background-color: #ccc;
+      }       --}}
+
+      table tbody tr:hover {
+        background-color: #aaa;
+      }
+
+      img {
+        display: block;
+        max-width:300px;
+        max-height:300px;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cards</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>Image</td>
+          <td>Shop</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>link</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+          <tr>
+            <td><img src="{{this.imageUrl}}" /></td>
+            <td>{{this.shop}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.price}} лв</td>
+            <td>
+              <a href="{{this.itemUrl}}" target="blanc" >
+                go to item
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>

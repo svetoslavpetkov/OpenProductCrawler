@@ -63,7 +63,8 @@ export class PlasicoAdapter implements IShopAdapter {
 
         const name = productDom.querySelector("a.ttl").innerText
         const itemUrl = "https://plasico.bg/" + productDom.querySelector("a.ttl").getAttribute("href")
-        const imageUrl = productDom.querySelector("a.cimg img").getAttribute("src")
+        
+        const imageUrl = productDom.querySelector("a.cimg img").getAttribute("data-original")
         let rawPrice = productDom.querySelector("span.price").innerText.replace("лв","")
         
         if(rawPrice.endsWith(".")) {
@@ -81,7 +82,7 @@ export class PlasicoAdapter implements IShopAdapter {
           isInStock: true,
           shop: this.getName(),
           itemUrl,
-          pictures: [imageUrl],
+          imageUrl,
           price
         })
       })

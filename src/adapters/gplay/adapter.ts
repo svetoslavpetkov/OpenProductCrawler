@@ -76,7 +76,7 @@ export class GplayAdapter implements IShopAdapter {
           isInStock: true,
           shop: "Gplay",
           itemUrl,
-          pictures: [imageUrl],
+          imageUrl,
           price
         })
       })

@@ -240,7 +240,7 @@ export class EmagAdapter implements IShopAdapter {
       price: i.offer.price.current,
       shop: "e-mag",
       itemUrl: `${i.url.desktop_base}${i.url.path}`,
-      pictures: [ ...i.image.resized_images.map(r => r.url) ]
+      imageUrl: i.image.original
     }))
 
     const totalCount = raw.data.data.pagination.items_count;

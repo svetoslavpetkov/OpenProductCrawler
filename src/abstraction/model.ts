@@ -11,7 +11,7 @@ export interface IItem {
   category: string
   description: string
   price: number
-  pictures?: Array<string>
+  imageUrl?: string
   itemUrl?: string
   isInStock: boolean
 }
@@ -30,7 +30,7 @@ export class ItemUtil {
       price: input.price,
       shop: sanitize(input.shop),
       itemUrl: sanitize(input.itemUrl),
-      pictures: !input.pictures ? [] : input.pictures.map(sanitize)
+      imageUrl: sanitize(input.imageUrl)
     }
   }
 }

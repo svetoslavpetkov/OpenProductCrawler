@@ -75,7 +75,7 @@ export class JmtAdapter implements IShopAdapter {
           isInStock: true,
           shop: this.getName(),
           itemUrl,
-          pictures: [imageUrl],
+          imageUrl,
           price
         })
       })
