@@ -16,11 +16,11 @@ export class AppController {
   async getHello() {
     const crawler = new Crawler(
       [
-        // new EmagAdapter(),
-        // new JarAdapter(),
-        // new GplayAdapter(),
-        // new DesktopBgAdapter(),
-        // new JarAdapter(),
+        new EmagAdapter(),
+        new JarAdapter(),
+        new GplayAdapter(),
+        new DesktopBgAdapter(),
+        new JarAdapter(),
         new PlasicoAdapter()
       ],
       [ "1060", "1070", "1080",
