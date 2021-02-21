@@ -6,6 +6,8 @@ import { JarAdapter } from './adapters/jar/jarAdapter';
 import { PlasicoAdapter } from './adapters/plasico/adapter';
 import { AppService } from './app.service';
 import { Crawler } from './crawler/crawler';
+import { JmtAdapter } from './adapters/jmt/adapter';
+import { ArdesAdapter } from './adapters/ardes/adapter';
 
 @Controller()
 export class AppController {
@@ -16,12 +18,13 @@ export class AppController {
   async getHello() {
     const crawler = new Crawler(
       [
-        new EmagAdapter(),
-        new JarAdapter(),
-        new GplayAdapter(),
-        new DesktopBgAdapter(),
-        new JarAdapter(),
-        new PlasicoAdapter()
+        // new EmagAdapter(),
+        // new JarAdapter(),
+        // new GplayAdapter(),
+        // new DesktopBgAdapter(),
+        // new JmtAdapter(),
+        // new PlasicoAdapter(),
+        new ArdesAdapter()
       ],
       [ "1060", "1070", "1080",
         "2060", "2070", "2080",
