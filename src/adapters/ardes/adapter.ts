@@ -65,14 +65,13 @@ export class ArdesAdapter implements IShopAdapter {
           .replace("Видео карта ", "")
         const itemUrl = "https://ardes.bg" + productDom.querySelector("div.product-head a").getAttribute("href")
         
-        const imageUrl = productDom.querySelector("div.product-head div.image img").getAttribute("data-original")
-        let rawPrice = productDom.querySelector("div.prices div.price div.price-num").innerText.replace("лв","")
-        
-        if(rawPrice.endsWith(".")) {
-          rawPrice = rawPrice.substring(0, rawPrice.length - 1)
-        }
-
-        rawPrice = rawPrice.trim();
+        const imageUrl = "https://ardes.bg" + productDom.querySelector("div.product-head div.image img").getAttribute("data-src")
+        let rawPrice = productDom.querySelector("div.prices div.price span.price-num")
+          .innerText
+          .replace("лв", "")
+        rawPrice = rawPrice
+          .substring(0, rawPrice.length - 2)
+          .trim()
 
         const price: number = parseInt(rawPrice)
         return ItemUtil.create({
@@ -92,7 +91,7 @@ export class ArdesAdapter implements IShopAdapter {
   }
 
   getUrl(page: number, pageSize: number) {
-    const pageSuffix =  page > 1 ? "/page/2" : ""
+    const pageSuffix =  page > 1 ? `/page/${page}` : ""
     return `https://ardes.bg/komponenti/video-karti${pageSuffix}?sort=price&direction=desc`
   }
 
