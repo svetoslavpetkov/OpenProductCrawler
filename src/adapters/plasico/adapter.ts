@@ -46,13 +46,17 @@ export class PlasicoAdapter implements IShopAdapter {
     const html = "" + raw.data
     const root = parse(html)
 
-    const allPages = root
+    const pagingDomRoot =  root
       .querySelector("#list-footer div.pagination div.pages")
-      .childNodes
-      .map(i => parseInt(i.innerText))
-      .filter(x => !isNaN(x))
-    
-    result.hasNextPage = allPages.some(x => x > page)
+
+    if(pagingDomRoot) {
+      const allPages = pagingDomRoot
+        .childNodes
+        .map(i => parseInt(i.innerText))
+        .filter(x => !isNaN(x))
+      
+      result.hasNextPage = allPages.some(x => x > page)
+    }
   
     const allProductDoms = root
       .querySelectorAll("#list-results article")
