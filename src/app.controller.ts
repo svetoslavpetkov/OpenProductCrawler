@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { Crawler } from './crawler/crawler';
 import { JmtAdapter } from './adapters/jmt/adapter';
 import { ArdesAdapter } from './adapters/ardes/adapter';
+import { PCBuildBgAdapter } from './adapters/pcbuild-bg/adapter';
 
 @Controller()
 export class AppController {
@@ -24,7 +25,8 @@ export class AppController {
         new DesktopBgAdapter(),
         new JmtAdapter(),
         new PlasicoAdapter(),
-        new ArdesAdapter()
+        new ArdesAdapter(),
+        new PCBuildBgAdapter(),
       ],
       [ "1060", "1070", "1080",
         "2060", "2070", "2080",
